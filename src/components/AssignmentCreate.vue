@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="add">
-    <div class="border border-gray-680 text-black">
+    <div class="border border-gray-680 text-black flex">
       <input
         v-model="newAssignment"
         placeholder="New assignment..."
