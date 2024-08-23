@@ -10,7 +10,7 @@
       title="Completed"
     ></assignment-list>
 
-    <assignment-create :assignments="assignments"></assignment-create>
+    <assignment-create @add="add"></assignment-create>
   </section>
 </template>
 
@@ -23,9 +23,9 @@ export default {
   data() {
     return {
       assignments: [
-        { name: "Finish project", complete: false, id: 1 },
-        { name: "Read Chapter 4", complete: false, id: 2 },
-        { name: "Turn in Homework", complete: false, id: 3 },
+        { name: "Finish project", complete: false, id: 1, tag: 'english' },
+        { name: "Read Chapter 4", complete: false, id: 2, tag: 'math' },
+        { name: "Turn in Homework", complete: false, id: 3, tag: 'math'},
       ],
     };
   },
@@ -40,14 +40,12 @@ export default {
     },
   },
   methods: {
-    add() {
+    add(name) {
       this.assignments.push({
-        name: this.newAssignment,
+        name: name,
         completed: false,
         id: this.assignments.length + 1,
       });
-
-      this.newAssignment = "";
     },
   },
 };
