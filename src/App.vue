@@ -1,5 +1,15 @@
 <template>
-  <h1 class="text-3xl font-bold underline">
-    Hello World
-  </h1>
+  <div class="bg-gray-800 text-white">
+    <Assignments></Assignments>
+  </div>
 </template>
+
+<script>
+import Assignments from "./components/Assignments.vue";
+
+export default {
+  components: {
+    Assignments,
+  },
+};
+</script>
